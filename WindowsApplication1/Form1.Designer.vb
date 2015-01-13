@@ -331,7 +331,7 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.ComboBox1)
         Me.Panel1.Controls.Add(Me.DateTimePicker1)
         Me.Panel1.Controls.Add(Me.Label11)
-        Me.Panel1.Location = New System.Drawing.Point(330, 12)
+        Me.Panel1.Location = New System.Drawing.Point(354, 12)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 100, 3, 3)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(620, 862)
