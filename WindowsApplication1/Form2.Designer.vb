@@ -60,10 +60,10 @@ Partial Class Form2
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.Label14)
-        Me.Panel1.Location = New System.Drawing.Point(346, 12)
+        Me.Panel1.Location = New System.Drawing.Point(390, 129)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 100, 3, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(620, 862)
+        Me.Panel1.Size = New System.Drawing.Size(620, 463)
         Me.Panel1.TabIndex = 28
         '
         'ComboBox3
@@ -77,6 +77,7 @@ Partial Class Form2
         '
         'ComboBox2
         '
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Location = New System.Drawing.Point(312, 302)
@@ -94,6 +95,7 @@ Partial Class Form2
         '
         'ComboBox1
         '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(312, 89)
@@ -107,7 +109,7 @@ Partial Class Form2
         Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(194, 22)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(232, 35)
+        Me.Label5.Size = New System.Drawing.Size(233, 35)
         Me.Label5.TabIndex = 1
         Me.Label5.Text = "Application Form"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -193,7 +195,7 @@ Partial Class Form2
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1362, 836)
+        Me.ClientSize = New System.Drawing.Size(1400, 1000)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Form2"

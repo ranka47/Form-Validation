@@ -41,31 +41,32 @@ Partial Class Form3
         Me.ErrorProvider3 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ErrorProvider4 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ErrorProvider5 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Panel1.SuspendLayout
-        CType(Me.ErrorProvider1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ErrorProvider2,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ErrorProvider3,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ErrorProvider4,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ErrorProvider5,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.SuspendLayout
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Panel1.SuspendLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
         '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.Red
         Me.Button1.FlatAppearance.BorderSize = 2
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Button1.Location = New System.Drawing.Point(273, 420)
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(219, 422)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(124, 47)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "Welcome!"
-        Me.Button1.UseVisualStyleBackColor = false
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Panel1
         '
         Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(243,Byte),Integer), CType(CType(156,Byte),Integer), CType(CType(18,Byte),Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(18, Byte), Integer))
         Me.Panel1.Controls.Add(Me.TextBox4)
         Me.Panel1.Controls.Add(Me.TextBox3)
         Me.Panel1.Controls.Add(Me.TextBox1)
@@ -78,16 +79,16 @@ Partial Class Form3
         Me.Panel1.Controls.Add(Me.Label13)
         Me.Panel1.Controls.Add(Me.ComboBox3)
         Me.Panel1.Controls.Add(Me.Label14)
-        Me.Panel1.Location = New System.Drawing.Point(354, 12)
+        Me.Panel1.Location = New System.Drawing.Point(419, 129)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 100, 3, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(620, 862)
+        Me.Panel1.Size = New System.Drawing.Size(562, 500)
         Me.Panel1.TabIndex = 28
         '
         'TextBox4
         '
         Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(312, 305)
+        Me.TextBox4.Location = New System.Drawing.Point(248, 307)
         Me.TextBox4.MaxLength = 14
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -97,7 +98,7 @@ Partial Class Form3
         'TextBox3
         '
         Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(312, 215)
+        Me.TextBox3.Location = New System.Drawing.Point(248, 217)
         Me.TextBox3.MaxLength = 14
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -107,9 +108,10 @@ Partial Class Form3
         'TextBox1
         '
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(312, 89)
+        Me.TextBox1.Location = New System.Drawing.Point(248, 91)
         Me.TextBox1.MaxLength = 14
         Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
         Me.TextBox1.Size = New System.Drawing.Size(258, 29)
         Me.TextBox1.TabIndex = 22
         '
@@ -117,7 +119,7 @@ Partial Class Form3
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(191, 22)
+        Me.Label7.Location = New System.Drawing.Point(162, 24)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(239, 35)
         Me.Label7.TabIndex = 1
@@ -127,11 +129,10 @@ Partial Class Form3
         'TextBox2
         '
         Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(312, 172)
+        Me.TextBox2.Location = New System.Drawing.Point(248, 174)
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBox2.ReadOnly = True
         Me.TextBox2.Size = New System.Drawing.Size(258, 30)
         Me.TextBox2.TabIndex = 7
         '
@@ -141,7 +142,7 @@ Partial Class Form3
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("MS Reference Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(121, 89)
+        Me.Label9.Location = New System.Drawing.Point(57, 91)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(138, 24)
         Me.Label9.TabIndex = 3
@@ -151,7 +152,7 @@ Partial Class Form3
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(121, 305)
+        Me.Label11.Location = New System.Drawing.Point(57, 307)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(146, 24)
         Me.Label11.TabIndex = 5
@@ -161,7 +162,7 @@ Partial Class Form3
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(121, 178)
+        Me.Label12.Location = New System.Drawing.Point(57, 180)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(152, 24)
         Me.Label12.TabIndex = 11
@@ -171,7 +172,7 @@ Partial Class Form3
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(121, 218)
+        Me.Label13.Location = New System.Drawing.Point(57, 220)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(162, 24)
         Me.Label13.TabIndex = 12
@@ -179,9 +180,10 @@ Partial Class Form3
         '
         'ComboBox3
         '
+        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(312, 254)
+        Me.ComboBox3.Location = New System.Drawing.Point(248, 256)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(258, 32)
         Me.ComboBox3.TabIndex = 19
@@ -190,7 +192,7 @@ Partial Class Form3
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(121, 262)
+        Me.Label14.Location = New System.Drawing.Point(57, 264)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(158, 24)
         Me.Label14.TabIndex = 13
@@ -229,7 +231,7 @@ Partial Class Form3
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form3"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.Panel1.ResumeLayout(false)
+        Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout
         CType(Me.ErrorProvider1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.ErrorProvider2,System.ComponentModel.ISupportInitialize).EndInit
@@ -257,4 +259,5 @@ End Sub
     Friend WithEvents ErrorProvider4 As System.Windows.Forms.ErrorProvider
     Friend WithEvents ErrorProvider5 As System.Windows.Forms.ErrorProvider
     Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
 End Class
