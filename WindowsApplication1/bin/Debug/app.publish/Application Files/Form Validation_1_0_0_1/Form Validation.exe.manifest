@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Form Validation.exe" version="1.0.0.1" publicKeyToken="7a057f5f1d1215c7" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="download.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Form Validation" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Form Validation.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BarcodeLib.Barcode.WinForms.dll" size="376832">
+      <assemblyIdentity name="BarcodeLib.Barcode.WinForms" version="5.0.0.30712" publicKeyToken="EF1BAE04ECFD0461" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>EmntdFL7G9tz3ZBF0DNQQVnK+bruPVNhXZoDeixVJcs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Form Validation.exe" size="247808">
+      <assemblyIdentity name="Form Validation" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>o1jB2GUYSdukTB09TN5xo3xz8sxEsVcGX+JfHjBhkFk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="download.ico" size="99678">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>gc5wRYhdhwEII4gwb+JWX3gYrm07wuc6wi5ipZgWxVU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Form Validation.exe.config" size="186">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>h0UeIdteCM29dGVw07LmHp593fPbh0IN11GyN3f2uRA=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=SUMEETRANKA\sumeet.ranka47" issuerKeyHash="c3d7e90e5f7848beabde84b1e82cb84686e78163" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>QQMwjuHPrWDvcxQStj/6vpOOaI4701tdX3Uw3fTC/Es=</DigestValue></Reference></SignedInfo><SignatureValue>FY4WF5hUsAF1o6LBiBd8OjsX35i9RS+15LitnRr11FRhxzyElPL1tRLGhW6fVujzeA2XFcIHQ8SZc6YDfqlCZRd8ok6MYW0UxBFjd2gURhxUZAr3+QY5XoTBofpAYmQqgufo6azLoSQQsh5lkTQdLXaCF5r2TcYp137hksurLlU=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>2eDGWz0aKfovmkW09SW+cgi1PrjmQIygxwhG0c2imyhss4OD2rAoTZ6Y1ELbGYn8ukWx5U00Tu6ir9aukJeQtsQSwhh0LwdyMVK2GHOI/b2Z/QaQsvd4PtWIJHbmRdA8xNV+EDGi3LaCuifTyYsWw2rsk/GZSp7DKsgIpMfPk8c=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="4bfcc2f4dd30755f5d5bd33b8e688e93befa3fb6121473ef60adcfe18e300341" Description="" Url=""><as:assemblyIdentity name="Form Validation.exe" version="1.0.0.1" publicKeyToken="7a057f5f1d1215c7" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=SUMEETRANKA\sumeet.ranka47</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>/s3YXWMU36IBFnMRcNf2/oM/xkC4rFqEsug+uPP3uuE=</DigestValue></Reference></SignedInfo><SignatureValue>zI5jj73a2+eUCbTX7iGszQ22sBCnmI1OABWPFOCRmaUeOQOTbOYXZYliY3yarwghJy/B684OkOE7Qm1kdbQaRuPcKu5L7wyYVJDcm4M1X0aIqYmYTBIvIgVSVvd8fTclCL+7TD8ZF018LVhV9Z1Q/pgfqp431UcTpxSWgeibA0Y=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>2eDGWz0aKfovmkW09SW+cgi1PrjmQIygxwhG0c2imyhss4OD2rAoTZ6Y1ELbGYn8ukWx5U00Tu6ir9aukJeQtsQSwhh0LwdyMVK2GHOI/b2Z/QaQsvd4PtWIJHbmRdA8xNV+EDGi3LaCuifTyYsWw2rsk/GZSp7DKsgIpMfPk8c=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIICATCCAWqgAwIBAgIQE8PvTnEUz45D8eNFg6k0+DANBgkqhkiG9w0BAQsFADA/MT0wOwYDVQQDHjQAUwBVAE0ARQBFAFQAUgBBAE4ASwBBAFwAcwB1AG0AZQBlAHQALgByAGEAbgBrAGEANAA3MB4XDTE1MDExNDA4Mzg1OFoXDTE2MDExNDE0Mzg1OFowPzE9MDsGA1UEAx40AFMAVQBNAEUARQBUAFIAQQBOAEsAQQBcAHMAdQBtAGUAZQB0AC4AcgBhAG4AawBhADQANzCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA2eDGWz0aKfovmkW09SW+cgi1PrjmQIygxwhG0c2imyhss4OD2rAoTZ6Y1ELbGYn8ukWx5U00Tu6ir9aukJeQtsQSwhh0LwdyMVK2GHOI/b2Z/QaQsvd4PtWIJHbmRdA8xNV+EDGi3LaCuifTyYsWw2rsk/GZSp7DKsgIpMfPk8cCAwEAATANBgkqhkiG9w0BAQsFAAOBgQARe29wisJfnf/Q4hF7dU6FnDl1Qupgz9HR1lb9nW4L37AblHD2Z3k4jnoEVwLO/xT9/hGQYAj6arXBDwfHELkS5+wzgY+CgZ5kdGiE0OmC7v9AI/v0GIzgj54jQaVCMSjmxsz5Wirsti+evqlG4m9PxLlOeTUwGU6P3MgvlPGuXQ==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

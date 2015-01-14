@@ -3,9 +3,11 @@ Imports System.Drawing
 Imports System.Drawing.Imaging
 Imports System.Web
 
+'Generates random enrolment ID. First three letters come from the country you belong to.
 Public Class Form3
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim letters As String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        'Dim letters As String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        Dim letters As String = UCase(Form1.ComboBox1.Text)
         Dim count = 0
         Dim rand As New Random
         Dim strpos = ""

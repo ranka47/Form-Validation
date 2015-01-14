@@ -1,19 +1,20 @@
-﻿Imports System.Text.RegularExpressions
+﻿'Importing classes for regular expressions, drawing, drawing.imaging, .web
+Imports System.Text.RegularExpressions
 Imports System.Drawing
 Imports System.Drawing.Imaging
 Imports System.Web
 
 
 Public Class Form1
-    Dim h_1 As Integer
-    Dim w_1 As Integer
+    Dim h_1 As Integer 'Height og the Image
+    Dim w_1 As Integer 'Width of the Image
     Dim count As Integer
     Dim info As Integer
 
     Dim attempt As Integer = 0
 
 
-
+    'Values of Combobox1.items.add(countries) when form gets loaded and generation of captcha image in picturebox2
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ComboBox1.Items.Add("Australia")
         ComboBox1.Items.Add("Canada")
@@ -21,36 +22,12 @@ Public Class Form1
         ComboBox1.Items.Add("India")
         ComboBox1.Items.Add("USA")
         PictureBox2.Image = generateImage()
-        ErrorProvider1.BlinkRate = 0
-        ErrorProvider2.BlinkRate = 0
-        ErrorProvider3.BlinkRate = 0
-        ErrorProvider10.BlinkRate = 0
-        ErrorProvider11.BlinkRate = 0
-        ErrorProvider4.BlinkRate = 0
-        ErrorProvider5.BlinkRate = 0
-        ErrorProvider6.BlinkRate = 0
-        ErrorProvider7.BlinkRate = 0
-        ErrorProvider8.BlinkRate = 0
-        ErrorProvider9.BlinkRate = 0
     End Sub
 
-
+    'On button1click (next button) message to show number of attempts, flag declaration and init to 1 to check the errors
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        'Dim control As Control
-        'For Each control In Controls
-        '    ' Set focus on control
-        '    control.Focus()
-        '    ' Validate causes the control's Validating event to be fired,
-        '    '  If CausesValidation Is True Then
-        '    If (Validate() = False) Then
-        '        DialogResult = DialogResult.None
-
-        '        Return
-
-        '    End If
-        'Next
-
-        If (attempt = 3) Then
+        
+        If (attempt = 3) Then        'Checks the number of attempts
             MessageBox.Show("No. of attempts exceeded")
             Me.Close()
         End If
@@ -61,21 +38,21 @@ Public Class Form1
             flag = 0
         Else
             Me.ErrorProvider8.SetError(Me.ComboBox1, "")
-            flag = 1
+
         End If
         If (ComboBox2.Text = "") Then
             Me.ErrorProvider9.SetError(Me.ComboBox2, "Select one state/province from the list")
             flag = 0
         Else
             Me.ErrorProvider9.SetError(Me.ComboBox2, "")
-            flag = 1
+
         End If
         If (ComboBox3.Text = "") Then
             Me.ErrorProvider10.SetError(Me.ComboBox3, "Select one city from the list")
             flag = 0
         Else
             Me.ErrorProvider10.SetError(Me.ComboBox3, "")
-            flag = 1
+
         End If
         If (CheckBox1.Checked = False Or Not ErrorProvider7.GetError(CheckBox1) = "") Then
             Me.ErrorProvider7.SetError(Me.CheckBox1, "You must agree with our policy")
@@ -105,12 +82,12 @@ Public Class Form1
             Me.ErrorProvider3.SetError(Me.TextBox6, "Proper email address is required")
             flag = 0
         End If
-        If (mobile.Text = "" Or Not ErrorProvider6.GetError(mobile) = "") Then
+        If (mobile.Text = "" Or Not ErrorProvider6.GetError(mobile) = "" Or Not mobile.Text.Length = mobile.MaxLength) Then
             Me.ErrorProvider6.SetError(Me.mobile, "The number you are dialling does not exist")
             flag = 0
         End If
-        'This flag is very dangerous to uncomment
-        flag = 1
+        'This flag is very dangerous to uncomment DEBUGGING LINE
+        ' flag = 1
         If (flag = 0) Then
             MessageBox.Show("You lost an attempt. Try Again and you have limited number of attempts.")
             attempt = attempt + 1
@@ -119,12 +96,11 @@ Public Class Form1
         End If
     End Sub
   
-
+    'Textbox2 -- NAME on textchanged and validating (errorprovider1), used regex to match alphabets and space \ "^[a-zA-Z ]+$" \
     Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged, TextBox2.Validating
 
         Dim c As String
         c = "^[a-zA-Z ]+$"
-        ErrorProvider1.BlinkRate = 250
         If (Regex.IsMatch(TextBox2.Text, c)) Then
             Me.ErrorProvider1.SetError(Me.TextBox2, "")
         Else
@@ -132,12 +108,11 @@ Public Class Form1
         End If
 
     End Sub
-
+    'Textbox4 -- INSTITUTE on textchanged and validating (errorprovider2), used regex to match alphabets and space \ "^[a-zA-Z ]+$" \
     Private Sub TextBox4_TextChanged(sender As Object, e As EventArgs) Handles TextBox4.TextChanged, TextBox4.Validating
        
         Dim c As String
-        c = "^[a-zA-Z ]+$"
-        ErrorProvider2.BlinkRate = 250
+        c = "^[a-zA-Z., ]+$"
         If (Regex.IsMatch(TextBox4.Text, c)) Then
             Me.ErrorProvider2.SetError(Me.TextBox4, "")
         Else
@@ -145,10 +120,10 @@ Public Class Form1
         End If
     End Sub
 
+    'Textbox6 -- EMAIL on textchanged and validating (errorprovider3), used regex to match alphabets and space \ "^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$" \
     Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles TextBox6.TextChanged, TextBox6.Validating
         Dim pattern As String
         pattern = "^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"
-        ErrorProvider3.BlinkRate = 250
         If (Regex.IsMatch(TextBox6.Text, pattern)) Then
             'MsgBox("Valid Email address ")
             Me.ErrorProvider3.SetError(Me.TextBox6, "")
@@ -156,14 +131,13 @@ Public Class Form1
         Else
             'MsgBox("Not a valid Email address ")
             Me.ErrorProvider3.SetError(Me.TextBox6, "Proper email address is required")
-
-
         End If
     End Sub
+
+    'Protected function to check the age through DOB; date.now.addyears changes the value of year in the date of variable
     Protected Function checkage() As Boolean
         Dim chosenvalue As Date
         chosenvalue = DateTimePicker1.Value
-        ErrorProvider4.BlinkRate = 250
         If (chosenvalue > Date.Now.AddYears(-18)) Then
             Me.ErrorProvider4.SetError(Me.DateTimePicker1, "You are too young, buddy")
             Return False
@@ -175,14 +149,17 @@ Public Class Form1
             Return True
         End If
     End Function
+
+    'On valuechange calls checkage() function to validate
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
         checkage()
     End Sub
+
+    'protected function to validate the image size; takes <info> variable from button3 sub. Called by Button3
     Protected Function ValidateImageSize() As Boolean
         Dim fileSize As Integer = info
         'limit size to approx 2MB and atleast 0.5MB  for image
-        ErrorProvider5.BlinkRate = 250
-        If (info > 500000 And info < 2097152) Then
+        If (info > 5000 And info < 2097152) Then
             count = 1
             Me.ErrorProvider5.SetError(Me.PictureBox1, "")
             Return True
@@ -194,6 +171,8 @@ Public Class Form1
             Return False
         End If
     End Function
+
+    'Button3 on click uploads picture, declared variable as <new openfiledialog>, filters <Picture Files (*)|*.bmp;*.gif;*.jpg>
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
 
         count = 0
@@ -202,48 +181,23 @@ Public Class Form1
         OpenFileDialog1.Filter = "Picture Files (*)|*.bmp;*.gif;*.jpg"
 
         If OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
-
-
-
             Dim infoReader As System.IO.FileInfo
             infoReader = My.Computer.FileSystem.GetFileInfo(OpenFileDialog1.FileName)
             'Console.WriteLine(infoReader.Length)
-
             info = infoReader.Length
             'Console.WriteLine(info)
             ValidateImageSize()
-            'If count = 1 Then
-            '    h_1 = Image.FromFile(OpenFileDialog1.FileName).Height
-            '    w_1 = Image.FromFile(OpenFileDialog1.FileName).Width
-            '    If (h_1 > 100 And h_1 < 123 And w_1 > 130 And w_1 < 158) Then
-            '        count = 1
             PictureBox1.Image = Image.FromFile(OpenFileDialog1.FileName)
-            'PictureBox1.Image = Image.FromFile(OpenFileDialog1.FileName)
-            '        'Console.WriteLine(PictureBox1.Height)
-            '        'Console.WriteLine(PictureBox1.Width)
-            '    Else
-
-            '        MessageBox.Show("Please upload an Image of approx. 9:16 ratio")
-            'Else
-            '    Me.ErrorProvider5.SetError(Me.PictureBox1, "correct height( >100 and <123) and width (>130 and <158) is required")
-
-            'End If
-
-
-
         End If
-
-
-
-        '        End If
     End Sub
 
-
+    ' IMPORTANT Hardcoded for the hierarchy of Country, State, City due to lack of Database Tables 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
         If ComboBox1.Text = "India" Then
             Me.isd.Text = "+91"
             Me.mobile.MaxLength = "10"
             ComboBox2.Items.Clear()
+            ComboBox3.Items.Clear()
             ComboBox2.Items.Add("Andhra Pradesh")
             ComboBox2.Items.Add("Assam")
             ComboBox2.Items.Add("Madhya Pradesh")
@@ -254,6 +208,7 @@ Public Class Form1
             Me.isd.Text = "+1"
             Me.mobile.MaxLength = "10"
             ComboBox2.Items.Clear()
+            ComboBox3.Items.Clear()
             ComboBox2.Items.Add("Alabama")
             ComboBox2.Items.Add("Colorado")
             ComboBox2.Items.Add("Delaware")
@@ -264,6 +219,7 @@ Public Class Form1
             Me.isd.Text = "+1"
             Me.mobile.MaxLength = "10"
             ComboBox2.Items.Clear()
+            ComboBox3.Items.Clear()
             ComboBox2.Items.Add("Alberta")
             ComboBox2.Items.Add("British Columbia")
             ComboBox2.Items.Add("Manitoba")
@@ -274,6 +230,7 @@ Public Class Form1
             Me.isd.Text = "+86"
             Me.mobile.MaxLength = "11"
             ComboBox2.Items.Clear()
+            ComboBox3.Items.Clear()
             ComboBox2.Items.Add("Anhui")
             ComboBox2.Items.Add("Hainan")
             ComboBox2.Items.Add("Jiangsu")
@@ -284,6 +241,7 @@ Public Class Form1
             Me.isd.Text = "+61"
             Me.mobile.MaxLength = "9"
             ComboBox2.Items.Clear()
+            ComboBox3.Items.Clear()
             ComboBox2.Items.Add("New South Wales")
             ComboBox2.Items.Add("Queensland")
             ComboBox2.Items.Add("South Australia")
@@ -507,15 +465,16 @@ Public Class Form1
 
 
     End Sub
-    Private Captcha As String
-    'Dim Captcha As String
 
+    'Source Code taken from "https://www.dropbox.com/s/9190ys3wgt9jt2/Simple%20Captcha%20Application.rar" ;Changes in source code: <to fit into the size; to have alphanumeric as captcha>
+    Private Captcha As String
     Private Function genQuestion() As String
-       
+
         Captcha = GenerateRandomString(6)
         Return String.Format(Captcha)
     End Function
 
+    'Generates lines in the captcha, called by generateimage()
     Private Sub generateLines(ByVal G As Graphics)
         If Not G Is Nothing Then
             Dim R As New Random()
@@ -528,6 +487,7 @@ Public Class Form1
         End If
     End Sub
 
+    'Generates images of alphanumeric; captcha refreshed by button2click
     Private Function generateImage() As Image
         Dim B As New Bitmap(204, 100)
         Using G As Graphics = Graphics.FromImage(B)
@@ -539,13 +499,12 @@ Public Class Form1
         End Using
         Return B
     End Function
+
+    'Captcha text input box
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged, TextBox1.Validating
-        ErrorProvider11.BlinkRate = 250
         Select Case TextBox1.Text
             Case Is = Captcha
                 ErrorProvider11.SetError(TextBox1, "")
-
-
             Case Else
                 ErrorProvider11.SetError(TextBox1, "Incorrect captcha typed, refresh if not properly visible")
 
@@ -577,7 +536,6 @@ Public Class Form1
 
 
     Private Sub mobile_TextChanged(sender As Object, e As EventArgs) Handles mobile.TextChanged
-        ErrorProvider6.BlinkRate = 250
         If (IsNumeric(mobile.Text) And mobile.Text.Length = mobile.MaxLength) Then
             Me.ErrorProvider6.SetError(Me.mobile, "")
         ElseIf (Not IsNumeric(mobile.Text) Or mobile.Text = "" Or mobile.Text.Length < mobile.MaxLength) Then
@@ -586,7 +544,6 @@ Public Class Form1
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-        ErrorProvider7.BlinkRate = 250
         If CheckBox1.Checked = True Then
             Me.ErrorProvider7.SetError(Me.CheckBox1, "")
         Else
@@ -596,4 +553,17 @@ Public Class Form1
 
   
 End Class
+'Dim control As Control
+'For Each control In Controls
+'    ' Set focus on control
+'    control.Focus()
+'    ' Validate causes the control's Validating event to be fired,
+'    '  If CausesValidation Is True Then
+'    If (Validate() = False) Then
+'        DialogResult = DialogResult.None
+
+'        Return
+
+'    End If
+'Next
 

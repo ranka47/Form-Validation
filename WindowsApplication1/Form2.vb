@@ -62,10 +62,12 @@
         If (thisyear < Year(thisdate) Or (thisyear = Year(thisdate) And thismonth < Month(thisdate))) Then
             Me.ErrorProvider3.SetError(Me.ComboBox3, "Your Card has Expired")
             flag = 0
+        Else
+            Me.ErrorProvider3.SetError(Me.ComboBox3, "")
         End If
         If flag = 1 Then
             'DEBUGGING FORM2, UNCOMMENT NEXT LINE AND COMMENT THE FOLLOWING TWO LINES
-            'MessageBox.Show("yes") 
+            'MessageBox.Show("yes")
             Form3.Show()
             Me.Close()
         End If
@@ -78,8 +80,8 @@
 
 
   
-
-    'STRING.COMPARE RETURNS 0 WHEN THE STRINGS ARE EQUAL AS PER CONDITIONS PROVIDED
+    'IMPORTANT
+    'STRING.COMPARE RETURNS 0 WHEN THE STRINGS ARE EQUAL AS PER CONDITIONS PROVIDED; hardcoded due to lack of database table 
     Protected Function visa() As Boolean
         TextBox1.SelectionStart = (0)
         TextBox1.SelectionLength = (1)
@@ -152,8 +154,6 @@
             Me.ErrorProvider4.SetError(Me.TextBox1, "Invalid Card Scheme")
             Return False
         End If
-
-
     End Function
 
     Protected Function combobox1check() As Boolean
@@ -165,11 +165,15 @@
             Return True
         End If
     End Function
+
+    'To choose the card scheme
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
         combobox1check()
     End Sub
 End Class
 
+'ISSUE
+'cODE TRIED TO SHOW IMAGE OF THE CARD SCHEME IN PICTUREBOX1 IN FORM2; 
 'Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
 '    Dim len As Integer = 10
 '    Dim i As Integer = 0

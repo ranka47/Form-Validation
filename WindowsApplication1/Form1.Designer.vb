@@ -63,6 +63,9 @@ Partial Class Form1
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip2 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip3 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider11, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -156,7 +159,7 @@ Partial Class Form1
         Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(272, 10)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(233, 35)
+        Me.Label1.Size = New System.Drawing.Size(232, 35)
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Application Form"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -165,6 +168,7 @@ Partial Class Form1
         '
         Me.mobile.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.mobile.Location = New System.Drawing.Point(293, 476)
+        Me.mobile.MaxLength = 11
         Me.mobile.Name = "mobile"
         Me.mobile.Size = New System.Drawing.Size(176, 29)
         Me.mobile.TabIndex = 50
@@ -194,6 +198,7 @@ Partial Class Form1
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(126, 47)
         Me.Button1.TabIndex = 49
+        Me.ToolTip2.SetToolTip(Me.Button1, "3")
         Me.Button1.UseVisualStyleBackColor = False
         '
         'TextBox6
@@ -352,6 +357,7 @@ Partial Class Form1
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(258, 29)
         Me.DateTimePicker1.TabIndex = 42
+        Me.ToolTip3.SetToolTip(Me.DateTimePicker1, "18-21")
         '
         'Label11
         '
@@ -388,6 +394,7 @@ Partial Class Form1
         Me.Button3.Size = New System.Drawing.Size(158, 36)
         Me.Button3.TabIndex = 59
         Me.Button3.Text = "Upload Picture"
+        Me.ToolTip1.SetToolTip(Me.Button3, "Size: 50kB - 2MB" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Height: 123 Width: 158 (Max Values)")
         Me.Button3.UseVisualStyleBackColor = False
         '
         'Label2
@@ -438,6 +445,18 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(780, 703)
         Me.Panel1.TabIndex = 61
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.ToolTipTitle = "Picture Specifications: "
+        '
+        'ToolTip2
+        '
+        Me.ToolTip2.ToolTipTitle = "Number of Attempts:"
+        '
+        'ToolTip3
+        '
+        Me.ToolTip3.ToolTipTitle = "Age Limit:"
         '
         'Form1
         '
@@ -513,5 +532,8 @@ Partial Class Form1
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolTip3 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolTip2 As System.Windows.Forms.ToolTip
 
 End Class

@@ -135,6 +135,7 @@ Partial Class Form3
         Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBox2.Size = New System.Drawing.Size(258, 30)
         Me.TextBox2.TabIndex = 7
+        Me.ToolTip1.SetToolTip(Me.TextBox2, "Minimum Length:8" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Atleast one uppercase, lowercase, special character, number")
         '
         'Label9
         '
@@ -217,6 +218,10 @@ Partial Class Form3
         'ErrorProvider5
         '
         Me.ErrorProvider5.ContainerControl = Me
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.ToolTipTitle = "Password Format:"
         '
         'Form3
         '
