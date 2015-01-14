@@ -433,7 +433,7 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.TextBox6)
         Me.Panel1.Controls.Add(Me.isd)
         Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Location = New System.Drawing.Point(302, 129)
+        Me.Panel1.Location = New System.Drawing.Point(295, 35)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(780, 703)
@@ -446,7 +446,7 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1384, 961)
+        Me.ClientSize = New System.Drawing.Size(1370, 772)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False

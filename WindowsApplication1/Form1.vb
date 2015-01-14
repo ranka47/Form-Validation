@@ -49,6 +49,7 @@ Public Class Form1
 
         '    End If
         'Next
+
         If (attempt = 3) Then
             MessageBox.Show("No. of attempts exceeded")
             Me.Close()
@@ -80,10 +81,9 @@ Public Class Form1
             Me.ErrorProvider7.SetError(Me.CheckBox1, "You must agree with our policy")
             flag = 0
         End If
-        If (checkage()) Then
-            flag = 1
-        Else
+        If (Not checkage()) Then
             flag = 0
+       
         End If
         If (TextBox1.Text = "" Or Not ErrorProvider11.GetError(TextBox1) = "") Then
             ErrorProvider11.SetError(TextBox1, "Incorrect captcha typed , refresh if not properly visible")
@@ -109,6 +109,7 @@ Public Class Form1
             Me.ErrorProvider6.SetError(Me.mobile, "The number you are dialling does not exist")
             flag = 0
         End If
+        'This flag is very dangerous to uncomment
         flag = 1
         If (flag = 0) Then
             MessageBox.Show("You lost an attempt. Try Again and you have limited number of attempts.")

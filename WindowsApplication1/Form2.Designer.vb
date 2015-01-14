@@ -60,7 +60,7 @@ Partial Class Form2
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.Label14)
-        Me.Panel1.Location = New System.Drawing.Point(390, 129)
+        Me.Panel1.Location = New System.Drawing.Point(375, 129)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 100, 3, 3)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(620, 463)
@@ -195,7 +195,7 @@ Partial Class Form2
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1400, 1000)
+        Me.ClientSize = New System.Drawing.Size(1370, 772)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Form2"
