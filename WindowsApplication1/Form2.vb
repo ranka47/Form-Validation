@@ -71,15 +71,8 @@
             Form3.Show()
             Me.Close()
         End If
-
     End Sub
 
-   
-
-
-
-
-  
     'IMPORTANT
     'STRING.COMPARE RETURNS 0 WHEN THE STRINGS ARE EQUAL AS PER CONDITIONS PROVIDED; hardcoded due to lack of database table 
     Protected Function visa() As Boolean
