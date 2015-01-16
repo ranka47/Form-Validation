@@ -42,6 +42,7 @@ Partial Class Form3
         Me.ErrorProvider4 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ErrorProvider5 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip2 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -94,6 +95,7 @@ Partial Class Form3
         Me.TextBox4.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBox4.Size = New System.Drawing.Size(258, 29)
         Me.TextBox4.TabIndex = 24
+        Me.ToolTip2.SetToolTip(Me.TextBox4, "should be atleast 4 letters/digits long")
         '
         'TextBox3
         '
@@ -223,13 +225,17 @@ Partial Class Form3
         '
         Me.ToolTip1.ToolTipTitle = "Password Format:"
         '
+        'ToolTip2
+        '
+        Me.ToolTip2.ToolTipTitle = "Minimum length specification"
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1345, 836)
+        Me.ClientSize = New System.Drawing.Size(1345, 788)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Form3"
@@ -265,4 +271,5 @@ End Sub
     Friend WithEvents ErrorProvider5 As System.Windows.Forms.ErrorProvider
     Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolTip2 As System.Windows.Forms.ToolTip
 End Class

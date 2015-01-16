@@ -34,18 +34,14 @@ Public Class Form3
         Dim pass As String
         pass = "^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$"
         If Regex.IsMatch(TextBox2.Text, pass) Then
-            'MsgBox("Valid Email address ")
             Me.ErrorProvider2.SetError(Me.TextBox2, "")
-            '  TextBox6.Text = LCase(TextBox6.Text)
             Return True
         Else
-            'MsgBox("Not a valid Email address ")
             Me.ErrorProvider2.SetError(Me.TextBox2, "Atleast one uppercase, lowercase, number and special character is required. Minimum length is 8")
             Return False
         End If
     End Function
     Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged, TextBox2.Validating
-        
         textbox2check()
     End Sub
     Protected Function textbox3check() As Boolean

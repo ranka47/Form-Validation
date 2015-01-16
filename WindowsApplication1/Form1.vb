@@ -28,8 +28,19 @@ Public Class Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         
         If (attempt = 3) Then        'Checks the number of attempts
-            MessageBox.Show("No. of attempts exceeded")
-            Me.Close()
+            MessageBox.Show("No. of attempts exceeded , You have to wait for next 10 seconds for making changes")
+            TextBox1.Enabled = False
+            TextBox2.Enabled = False
+            TextBox4.Enabled = False
+            TextBox6.Enabled = False
+            mobile.Enabled = False
+            Button1.Enabled = False
+            Button2.Enabled = False
+            Button3.Enabled = False
+            DateTimePicker1.Enabled = False
+            CheckBox1.Enabled = False
+            Timer1.Start()
+            'Me.Close()
         End If
         Dim flag As Integer
         flag = 1
@@ -88,10 +99,10 @@ Public Class Form1
         End If
         'This flag is very dangerous to uncomment DEBUGGING LINE
         ' flag = 1
-        If (flag = 0) Then
+        If (flag = 0 And attempt < 3) Then
             MessageBox.Show("You lost an attempt. Try Again and you have limited number of attempts.")
             attempt = attempt + 1
-        Else
+        ElseIf (flag = 1) Then
             Form2.Show()
         End If
     End Sub
@@ -101,10 +112,14 @@ Public Class Form1
 
         Dim c As String
         c = "^[a-zA-Z ]+$"
-        If (Regex.IsMatch(TextBox2.Text, c)) Then
+        If (Regex.IsMatch(TextBox2.Text, c) And TextBox2.Text.Length >= 2) Then
             Me.ErrorProvider1.SetError(Me.TextBox2, "")
+        ElseIf (TextBox2.Text.Length < 2 And Regex.IsMatch(TextBox2.Text, c)) Then
+            Me.ErrorProvider1.SetError(Me.TextBox2, "Minimum length of Name should be 2")
+        ElseIf (TextBox2.Text.Length < 2 And Not Regex.IsMatch(TextBox2.Text, c)) Then
+            Me.ErrorProvider1.SetError(Me.TextBox2, "Proper name with minimum length 2 is required")
         Else
-            Me.ErrorProvider1.SetError(Me.TextBox2, "Proper Name is required")
+            Me.ErrorProvider1.SetError(Me.TextBox2, "Proper name is required")
         End If
 
     End Sub
@@ -113,8 +128,12 @@ Public Class Form1
        
         Dim c As String
         c = "^[a-zA-Z., ]+$"
-        If (Regex.IsMatch(TextBox4.Text, c)) Then
+        If (Regex.IsMatch(TextBox4.Text, c) And TextBox4.Text.Length >= 2) Then
             Me.ErrorProvider2.SetError(Me.TextBox4, "")
+        ElseIf (TextBox4.Text.Length < 2 And Regex.IsMatch(TextBox4.Text, c)) Then
+            Me.ErrorProvider2.SetError(Me.TextBox4, "Minimum length of Institute Name should be 2")
+        ElseIf (TextBox4.Text.Length < 2 And Not Regex.IsMatch(TextBox4.Text, c)) Then
+            Me.ErrorProvider2.SetError(Me.TextBox4, "Proper Institute name with minimum length 2 is required")
         Else
             Me.ErrorProvider2.SetError(Me.TextBox4, "Proper Institute name is required")
         End If
@@ -138,11 +157,14 @@ Public Class Form1
     Protected Function checkage() As Boolean
         Dim chosenvalue As Date
         chosenvalue = DateTimePicker1.Value
-        If (chosenvalue > Date.Now.AddYears(-18)) Then
+        If (chosenvalue > Date.Now.AddYears(-18) And Year(chosenvalue) <= Year(Now)) Then
             Me.ErrorProvider4.SetError(Me.DateTimePicker1, "You are too young, buddy")
             Return False
         ElseIf (chosenvalue < Date.Now.AddYears(-21)) Then
             Me.ErrorProvider4.SetError(Me.DateTimePicker1, "Sorry, you have crossed the age limit")
+            Return False
+        ElseIf (Year(chosenvalue) > Year(Now)) Then
+            Me.ErrorProvider4.SetError(Me.DateTimePicker1, "Invalid Date entered")
             Return False
         Else
             Me.ErrorProvider4.SetError(Me.DateTimePicker1, "")
@@ -550,20 +572,42 @@ Public Class Form1
             Me.ErrorProvider7.SetError(Me.CheckBox1, "You must agree with our policy")
         End If
     End Sub
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Timer1.Stop()
 
+        TextBox1.Enabled = True
+        TextBox2.Enabled = True
+        TextBox4.Enabled = True
+        TextBox6.Enabled = True
+        mobile.Enabled = True
+        Button1.Enabled = True
+        Button2.Enabled = True
+        Button3.Enabled = True
+        DateTimePicker1.Enabled = True
+        CheckBox1.Enabled = True
+        attempt = 0
+        'Dim control As Control
+        'For Each control In Me.Controls
+        '    ' Set focus on control
+        '    If TypeOf control Is TextBox Then
+        '        control.Enabled = True
+        '    End If
+
+        ' Validate causes the control's Validating event to be fired,
+        '  If CausesValidation Is True Then
+        ' If (Validate() = False) Then
+        'DialogResult = DialogResult.None
+
+        'Return
+
+        'End If
+        ' Next
+
+        MessageBox.Show("You can make the changes now")
+    End Sub
   
+    Private Sub TextBox6_TextChanged(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TextBox6.Validating, TextBox6.TextChanged
+
+    End Sub
 End Class
-'Dim control As Control
-'For Each control In Controls
-'    ' Set focus on control
-'    control.Focus()
-'    ' Validate causes the control's Validating event to be fired,
-'    '  If CausesValidation Is True Then
-'    If (Validate() = False) Then
-'        DialogResult = DialogResult.None
-
-'        Return
-
-'    End If
-'Next
 

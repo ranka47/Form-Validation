@@ -38,6 +38,7 @@ Partial Class Form2
         Me.ErrorProvider2 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ErrorProvider3 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ErrorProvider4 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,7 +110,7 @@ Partial Class Form2
         Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(194, 22)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(233, 35)
+        Me.Label5.Size = New System.Drawing.Size(232, 35)
         Me.Label5.TabIndex = 1
         Me.Label5.Text = "Application Form"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -162,6 +163,7 @@ Partial Class Form2
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(258, 30)
         Me.TextBox1.TabIndex = 9
+        Me.ToolTip1.SetToolTip(Me.TextBox1, "should be 16 digit long")
         '
         'Label14
         '
@@ -188,6 +190,10 @@ Partial Class Form2
         'ErrorProvider4
         '
         Me.ErrorProvider4.ContainerControl = Me
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.ToolTipTitle = "Card No. length"
         '
         'Form2
         '
@@ -227,4 +233,5 @@ Partial Class Form2
     Friend WithEvents ErrorProvider2 As System.Windows.Forms.ErrorProvider
     Friend WithEvents ErrorProvider3 As System.Windows.Forms.ErrorProvider
     Friend WithEvents ErrorProvider4 As System.Windows.Forms.ErrorProvider
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
 End Class

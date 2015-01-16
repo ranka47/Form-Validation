@@ -17,7 +17,7 @@
             mnth = mnth + 1
         End While
         ComboBox2.SelectedIndex = 0
-        ComboBox3.Items.Add("0000")
+        '  ComboBox3.Items.Add("0000")
 
         Dim thisyear As Integer
         thisyear = Year(thisdate)
@@ -38,7 +38,7 @@
         End If
     End Function
 
-    Private Sub TextBox1_textchanged(ByVal sender As Object, ByVal e As EventArgs) Handles TextBox1.TextChanged
+    Private Sub TextBox1_textchanged(ByVal sender As Object, ByVal e As EventArgs) Handles TextBox1.TextChanged, TextBox1.Validating
         textbox1check()
     End Sub
 

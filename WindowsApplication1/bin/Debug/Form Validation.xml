@@ -6,7 +6,24 @@ FormValidation
 </name>
 </assembly>
 <members>
-<member name="P:FormValidation.My.Resources.Resources.ResourceManager">
+<member name="P:FormValidation.My.Resources.Resource1.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:FormValidation.My.Resources.Resource1.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:FormValidation.My.Resources.Resource1.mastercard">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="T:FormValidation.My.Resources.Resource1">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="P:FormValidation.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.
 </summary>
@@ -32,23 +49,6 @@ FormValidation
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="T:FormValidation.My.Resources.Resources">
-	<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
-</summary>
-</member><member name="P:FormValidation.My.Resources.Resource1.ResourceManager">
-	<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member><member name="P:FormValidation.My.Resources.Resource1.Culture">
-	<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member><member name="P:FormValidation.My.Resources.Resource1.mastercard">
-	<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member><member name="T:FormValidation.My.Resources.Resource1">
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
 </summary>

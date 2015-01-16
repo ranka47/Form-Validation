@@ -66,6 +66,10 @@ Partial Class Form1
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolTip2 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolTip3 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.ToolTip4 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip5 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip6 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider11, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,16 +104,17 @@ Partial Class Form1
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(699, 476)
+        Me.Button2.Location = New System.Drawing.Point(697, 476)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(28, 28)
         Me.Button2.TabIndex = 57
+        Me.ToolTip6.SetToolTip(Me.Button2, "Refresh Here")
         Me.Button2.UseVisualStyleBackColor = False
         '
         'TextBox1
         '
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(523, 476)
+        Me.TextBox1.Location = New System.Drawing.Point(521, 475)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(160, 29)
         Me.TextBox1.TabIndex = 56
@@ -126,7 +131,7 @@ Partial Class Form1
         'PictureBox2
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox2.Location = New System.Drawing.Point(523, 310)
+        Me.PictureBox2.Location = New System.Drawing.Point(521, 306)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(204, 100)
         Me.PictureBox2.TabIndex = 55
@@ -167,7 +172,7 @@ Partial Class Form1
         'mobile
         '
         Me.mobile.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.mobile.Location = New System.Drawing.Point(293, 476)
+        Me.mobile.Location = New System.Drawing.Point(293, 472)
         Me.mobile.MaxLength = 11
         Me.mobile.Name = "mobile"
         Me.mobile.Size = New System.Drawing.Size(176, 29)
@@ -177,7 +182,7 @@ Partial Class Form1
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(50, 432)
+        Me.Label5.Location = New System.Drawing.Point(50, 430)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(79, 24)
         Me.Label5.TabIndex = 35
@@ -204,7 +209,7 @@ Partial Class Form1
         'TextBox6
         '
         Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(241, 432)
+        Me.TextBox6.Location = New System.Drawing.Point(241, 430)
         Me.TextBox6.MaxLength = 32728
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(228, 29)
@@ -214,7 +219,7 @@ Partial Class Form1
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(50, 310)
+        Me.Label7.Location = New System.Drawing.Point(50, 306)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(75, 24)
         Me.Label7.TabIndex = 38
@@ -223,7 +228,7 @@ Partial Class Form1
         'isd
         '
         Me.isd.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.isd.Location = New System.Drawing.Point(241, 476)
+        Me.isd.Location = New System.Drawing.Point(241, 472)
         Me.isd.Name = "isd"
         Me.isd.ReadOnly = True
         Me.isd.Size = New System.Drawing.Size(46, 29)
@@ -233,7 +238,7 @@ Partial Class Form1
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(50, 350)
+        Me.Label8.Location = New System.Drawing.Point(50, 346)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(51, 24)
         Me.Label8.TabIndex = 39
@@ -273,6 +278,7 @@ Partial Class Form1
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(258, 30)
         Me.TextBox4.TabIndex = 37
+        Me.ToolTip5.SetToolTip(Me.TextBox4, "Institute Name should be atleast two alphabets long")
         '
         'ErrorProvider3
         '
@@ -294,13 +300,14 @@ Partial Class Form1
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(258, 30)
         Me.TextBox2.TabIndex = 36
+        Me.ToolTip4.SetToolTip(Me.TextBox2, "Name should be atleast two alphabets long")
         '
         'ComboBox3
         '
         Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(241, 391)
+        Me.ComboBox3.Location = New System.Drawing.Point(241, 388)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(228, 32)
         Me.ComboBox3.TabIndex = 46
@@ -309,7 +316,7 @@ Partial Class Form1
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(50, 386)
+        Me.Label9.Location = New System.Drawing.Point(50, 387)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(40, 24)
         Me.Label9.TabIndex = 40
@@ -320,7 +327,7 @@ Partial Class Form1
         Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(241, 353)
+        Me.ComboBox2.Location = New System.Drawing.Point(241, 347)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(228, 32)
         Me.ComboBox2.TabIndex = 45
@@ -329,7 +336,7 @@ Partial Class Form1
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(50, 476)
+        Me.Label10.Location = New System.Drawing.Point(50, 472)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(108, 24)
         Me.Label10.TabIndex = 41
@@ -341,7 +348,7 @@ Partial Class Form1
         Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.ComboBox1.Location = New System.Drawing.Point(241, 310)
+        Me.ComboBox1.Location = New System.Drawing.Point(241, 306)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(228, 32)
         Me.ComboBox1.TabIndex = 44
@@ -389,7 +396,7 @@ Partial Class Form1
         Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(49, 235)
+        Me.Button3.Location = New System.Drawing.Point(49, 228)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(158, 36)
         Me.Button3.TabIndex = 59
@@ -401,7 +408,7 @@ Partial Class Form1
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(548, 432)
+        Me.Label2.Location = New System.Drawing.Point(525, 434)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(156, 20)
         Me.Label2.TabIndex = 60
@@ -457,6 +464,18 @@ Partial Class Form1
         'ToolTip3
         '
         Me.ToolTip3.ToolTipTitle = "Age Limit:"
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 10000
+        '
+        'ToolTip4
+        '
+        Me.ToolTip4.ToolTipTitle = "Name Specifications"
+        '
+        'ToolTip5
+        '
+        Me.ToolTip5.ToolTipTitle = "Institute Name Specifications:"
         '
         'Form1
         '
@@ -535,5 +554,9 @@ Partial Class Form1
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents ToolTip3 As System.Windows.Forms.ToolTip
     Friend WithEvents ToolTip2 As System.Windows.Forms.ToolTip
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents ToolTip4 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolTip5 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolTip6 As System.Windows.Forms.ToolTip
 
 End Class
