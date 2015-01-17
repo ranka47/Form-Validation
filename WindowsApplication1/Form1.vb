@@ -31,6 +31,7 @@ Public Class Form1
             MessageBox.Show("No. of attempts exceeded , You have to wait for next 10 seconds for making changes")
             TextBox1.Enabled = False
             TextBox2.Enabled = False
+            TextBox3.Enabled = False
             TextBox4.Enabled = False
             TextBox6.Enabled = False
             mobile.Enabled = False
@@ -89,6 +90,10 @@ Public Class Form1
             Me.ErrorProvider5.SetError(Me.PictureBox1, "Image is required")
             flag = 0
         End If
+        If (TextBox3.Text = "" Or Not ErrorProvider12.GetError(TextBox6) = "") Then
+            Me.ErrorProvider12.SetError(Me.TextBox3, "Email Address not matching")
+            flag = 0
+        End If
         If (TextBox6.Text = "" Or Not ErrorProvider3.GetError(TextBox6) = "") Then
             Me.ErrorProvider3.SetError(Me.TextBox6, "Proper email address is required")
             flag = 0
@@ -98,7 +103,7 @@ Public Class Form1
             flag = 0
         End If
         'This flag is very dangerous to uncomment DEBUGGING LINE
-        ' flag = 1
+        'flag = 1
         If (flag = 0 And attempt < 3) Then
             MessageBox.Show("You lost an attempt. Try Again and you have limited number of attempts.")
             attempt = attempt + 1
@@ -138,9 +143,9 @@ Public Class Form1
             Me.ErrorProvider2.SetError(Me.TextBox4, "Proper Institute name is required")
         End If
     End Sub
+    Protected Function checkmail() As Boolean
 
-    'Textbox6 -- EMAIL on textchanged and validating (errorprovider3), used regex to match alphabets and space \ "^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$" \
-    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles TextBox6.TextChanged, TextBox6.Validating
+
         Dim pattern As String
         pattern = "^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"
         If (Regex.IsMatch(TextBox6.Text, pattern)) Then
@@ -151,6 +156,10 @@ Public Class Form1
             'MsgBox("Not a valid Email address ")
             Me.ErrorProvider3.SetError(Me.TextBox6, "Proper email address is required")
         End If
+        'Textbox6 -- EMAIL on textchanged and validating (errorprovider3), used regex to match alphabets and space \ "^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$" \
+    End Function
+    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles TextBox6.TextChanged, TextBox6.Validating
+        checkmail()
     End Sub
 
     'Protected function to check the age through DOB; date.now.addyears changes the value of year in the date of variable
@@ -164,7 +173,7 @@ Public Class Form1
             Me.ErrorProvider4.SetError(Me.DateTimePicker1, "Sorry, you have crossed the age limit")
             Return False
         ElseIf (Year(chosenvalue) > Year(Now)) Then
-            Me.ErrorProvider4.SetError(Me.DateTimePicker1, "Invalid Date entered")
+            Me.ErrorProvider4.SetError(Me.DateTimePicker1, "Oh! You haven't born yet. Sorry")
             Return False
         Else
             Me.ErrorProvider4.SetError(Me.DateTimePicker1, "")
@@ -215,6 +224,11 @@ Public Class Form1
 
     ' IMPORTANT Hardcoded for the hierarchy of Country, State, City due to lack of Database Tables 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        If ComboBox1.Text = "" Then
+            Me.ErrorProvider8.SetError(Me.ComboBox1, "Please select the country")
+        Else
+            Me.ErrorProvider8.SetError(Me.ComboBox1, "")
+        End If
         If ComboBox1.Text = "India" Then
             Me.isd.Text = "+91"
             Me.mobile.MaxLength = "10"
@@ -276,6 +290,11 @@ Public Class Form1
     End Sub
 
     Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
+        If ComboBox2.Text = "" Then
+            Me.ErrorProvider9.SetError(Me.ComboBox2, "Please select the state/province")
+        Else
+            Me.ErrorProvider9.SetError(Me.ComboBox2, "")
+        End If
         If ComboBox2.Text = "Assam" Then
             ' Me.TextBox4.Text = "+91"
             ComboBox3.Items.Clear()
@@ -284,7 +303,7 @@ Public Class Form1
             ComboBox3.Items.Add("Guwahati")
             ComboBox3.Items.Add("Nalbari")
             ComboBox3.Items.Add("Sivasagar")
-          
+
         ElseIf ComboBox2.Text = "Rajasthan" Then
             'Me.TextBox4.Text = "+1"
             ComboBox3.Items.Clear()
@@ -293,7 +312,7 @@ Public Class Form1
             ComboBox3.Items.Add("Jaipur")
             ComboBox3.Items.Add("Kota")
             ComboBox3.Items.Add("Udaipur")
-          
+
         ElseIf ComboBox2.Text = "Maharashtra" Then
             'Me.TextBox4.Text = "+1"
             ComboBox3.Items.Clear()
@@ -302,7 +321,7 @@ Public Class Form1
             ComboBox3.Items.Add("Dhule")
             ComboBox3.Items.Add("Navi-Mumbai")
             ComboBox3.Items.Add("Thane")
-        
+
         ElseIf ComboBox2.Text = "Madhya Pradesh" Then
             'Me.TextBox4.Text = "+86"
             ComboBox3.Items.Clear()
@@ -311,7 +330,7 @@ Public Class Form1
             ComboBox3.Items.Add("Indore")
             ComboBox3.Items.Add("Sagar")
             ComboBox3.Items.Add("Ujjain")
-           
+
         ElseIf ComboBox2.Text = "Andhra Pradesh" Then
             'Me.TextBox4.Text = "+61"
             ComboBox3.Items.Clear()
@@ -320,7 +339,7 @@ Public Class Form1
             ComboBox3.Items.Add("Guntur")
             ComboBox3.Items.Add("Nandyal")
             ComboBox3.Items.Add("Visakhapatnam")
-      
+
         ElseIf ComboBox2.Text = "Alabama" Then
             'Me.TextBox4.Text = "+61"
             ComboBox3.Items.Clear()
@@ -539,7 +558,7 @@ Public Class Form1
         PictureBox2.Image = generateImage()
     End Sub
 
-    
+
     Public Function GenerateRandomString(ByRef lenStr As Integer, Optional ByVal upper As Boolean = False) As String
         'use
         'TextBox1.Text = GenerateRandomString(18)
@@ -577,6 +596,7 @@ Public Class Form1
 
         TextBox1.Enabled = True
         TextBox2.Enabled = True
+        TextBox3.Enabled = True
         TextBox4.Enabled = True
         TextBox6.Enabled = True
         mobile.Enabled = True
@@ -605,8 +625,24 @@ Public Class Form1
 
         MessageBox.Show("You can make the changes now")
     End Sub
-  
-   
+
+
+
+    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles TextBox3.TextChanged
+        checkmail()
+        If Not TextBox3.Text = TextBox6.Text Then
+            Me.ErrorProvider12.SetError(Me.TextBox3, "Email Address not matching")
+        Else
+            Me.ErrorProvider12.SetError(Me.TextBox3, "")
+        End If
+    End Sub
     
+    Private Sub ComboBox3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox3.SelectedIndexChanged
+        If ComboBox3.Text = "" Then
+            Me.ErrorProvider10.SetError(Me.ComboBox3, "Please select the country")
+        Else
+            Me.ErrorProvider10.SetError(Me.ComboBox3, "")
+        End If
+    End Sub
 End Class
 

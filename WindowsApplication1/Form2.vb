@@ -65,6 +65,8 @@
         Else
             Me.ErrorProvider3.SetError(Me.ComboBox3, "")
         End If
+        'DEBUGGING LINE, VERY DANGEROUS TO UNCOMMENT
+        'flag = 1
         If flag = 1 Then
             'DEBUGGING FORM2, UNCOMMENT NEXT LINE AND COMMENT THE FOLLOWING TWO LINES
             'MessageBox.Show("yes")

@@ -104,6 +104,7 @@ Partial Class Form3
         Me.TextBox3.MaxLength = 14
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TextBox3.ShortcutsEnabled = False
         Me.TextBox3.Size = New System.Drawing.Size(258, 29)
         Me.TextBox3.TabIndex = 23
         '
@@ -235,7 +236,7 @@ Partial Class Form3
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1345, 788)
+        Me.ClientSize = New System.Drawing.Size(1345, 772)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Form3"

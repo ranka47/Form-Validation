@@ -86,9 +86,8 @@ Public Class Form3
         If (ComboBox3.Text = "" Or Not ErrorProvider3.GetError(TextBox3) = "" Or TextBox2.Text = "" Or TextBox3.Text = "" Or Not ErrorProvider2.GetError(TextBox2) = "" Or TextBox4.Text = "" Or Not ErrorProvider4.GetError(TextBox4) = "") Then
             flag = 0
         Else
+            MessageBox.Show("Thank you for applying. You will receive an email regarding the exam centre details. All the Best for the exam.")
             Form1.Close()
         End If
-
-
     End Sub
 End Class

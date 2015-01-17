@@ -70,6 +70,9 @@ Partial Class Form1
         Me.ToolTip4 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolTip5 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolTip6 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.ErrorProvider12 = New System.Windows.Forms.ErrorProvider(Me.components)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider11, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,6 +87,7 @@ Partial Class Form1
         CType(Me.ErrorProvider8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.ErrorProvider12, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TextBox5
@@ -165,7 +169,7 @@ Partial Class Form1
         Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(272, 10)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(232, 35)
+        Me.Label1.Size = New System.Drawing.Size(233, 35)
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Application Form"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -173,7 +177,7 @@ Partial Class Form1
         'mobile
         '
         Me.mobile.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.mobile.Location = New System.Drawing.Point(293, 472)
+        Me.mobile.Location = New System.Drawing.Point(293, 507)
         Me.mobile.MaxLength = 11
         Me.mobile.Name = "mobile"
         Me.mobile.Size = New System.Drawing.Size(176, 29)
@@ -229,7 +233,7 @@ Partial Class Form1
         'isd
         '
         Me.isd.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.isd.Location = New System.Drawing.Point(241, 472)
+        Me.isd.Location = New System.Drawing.Point(241, 507)
         Me.isd.Name = "isd"
         Me.isd.ReadOnly = True
         Me.isd.Size = New System.Drawing.Size(46, 29)
@@ -337,7 +341,7 @@ Partial Class Form1
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(50, 472)
+        Me.Label10.Location = New System.Drawing.Point(50, 507)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(108, 24)
         Me.Label10.TabIndex = 41
@@ -421,6 +425,8 @@ Partial Class Form1
         Me.Panel1.AutoScroll = True
         Me.Panel1.AutoSize = True
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(18, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.TextBox3)
         Me.Panel1.Controls.Add(Me.DateTimePicker1)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label11)
@@ -478,6 +484,30 @@ Partial Class Form1
         '
         Me.ToolTip5.ToolTipTitle = "Institute Name Specifications:"
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(50, 468)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(149, 24)
+        Me.Label6.TabIndex = 61
+        Me.Label6.Text = "Confirm Email ID"
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox3.Location = New System.Drawing.Point(241, 468)
+        Me.TextBox3.MaxLength = 32728
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.ShortcutsEnabled = False
+        Me.TextBox3.Size = New System.Drawing.Size(228, 29)
+        Me.TextBox3.TabIndex = 62
+        '
+        'ErrorProvider12
+        '
+        Me.ErrorProvider12.ContainerControl = Me
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -509,6 +539,7 @@ Partial Class Form1
         CType(Me.ErrorProvider7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.ErrorProvider12, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -559,5 +590,8 @@ Partial Class Form1
     Friend WithEvents ToolTip4 As System.Windows.Forms.ToolTip
     Friend WithEvents ToolTip5 As System.Windows.Forms.ToolTip
     Friend WithEvents ToolTip6 As System.Windows.Forms.ToolTip
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents ErrorProvider12 As System.Windows.Forms.ErrorProvider
 
 End Class

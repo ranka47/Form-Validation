@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Form Validation.exe" size="251392">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Form Validation.exe" size="252928">
       <assemblyIdentity name="Form Validation" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UP7YdiNYAOFrGuvvuqpAkBrB/ei/nDD8V0flJg2AbbY=</dsig:DigestValue>
+        <dsig:DigestValue>jbJfuWC9kBweEq7WznFCjo3YLUfrjstWvKHfVEeW6MU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
