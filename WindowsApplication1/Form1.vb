@@ -189,7 +189,7 @@ Public Class Form1
             Me.ErrorProvider5.SetError(Me.PictureBox1, "Image must be of size < 2MB")
             Return False
         Else
-            Me.ErrorProvider5.SetError(Me.PictureBox1, "Image is too small. Must be of > 0.5MB")
+            Me.ErrorProvider5.SetError(Me.PictureBox1, "Image is too small. Must be of > 5KB")
             Return False
         End If
     End Function
@@ -606,8 +606,7 @@ Public Class Form1
         MessageBox.Show("You can make the changes now")
     End Sub
   
-    Private Sub TextBox6_TextChanged(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TextBox6.Validating, TextBox6.TextChanged
-
-    End Sub
+   
+    
 End Class
 
